@@ -1,0 +1,1274 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==========================================
+   ALL PAGES BACKGROUND
+   4th IMAGE
+========================================== */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #222;
+
+    min-height: 100vh;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 255, 255, 0.55),
+            rgba(255, 255, 255, 0.55)
+        ),
+
+        url("/static/images/plant-bg.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+
+}
+
+
+/* ==========================================
+   NAVBAR
+========================================== */
+.navbar{
+    background:#004100;
+    
+}
+.navbar-toggler{
+    border: 2px solid white !important;
+}
+.navbar-toggler-icon{
+    filter: brightness(0) invert(1);
+}
+
+.navbar-nav .nav-link{
+    color: #fff !important;
+    margin: 0 8px;
+    padding: 8px 18px !important;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:hover{
+    background: rgba(50,205,50,0.25);
+    color: #fff !important;
+}
+
+/* Active Page Button */
+.navbar-nav .nav-link.active{
+    background: rgba(135,206,235,0.35);
+    color: #fff !important;
+    border: 1px solid white;
+    backdrop-filter: blur(5px);
+}
+
+.hub{
+    color:  rgb(137, 241, 33);
+}
+
+/* ================= PROFILE BUTTON ================= */
+
+.profile-btn {
+    height: 42px;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.profile-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.profile-btn i {
+    font-size: 20px;
+}
+/* ================= PROFILE BUTTON ================= */
+
+.custom-btn {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+    border: none !important;
+    border-radius: 50% !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent !important;
+    color: #ffffff !important;
+
+    font-size: 27px;
+
+    transition: all 0.3s ease;
+}
+
+/* Icon */
+.custom-btn i {
+    font-size: 27px;
+    line-height: 1;
+}
+
+/* Hover Effect */
+.custom-btn:hover {
+    color: #d8f3dc !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    transform: scale(1.08);
+}
+
+/* Click effect */
+.custom-btn:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.page-heading {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.page-heading h1 {
+
+    color: #006b2d;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.page-heading p {
+
+    color: #444;
+
+    font-size: 18px;
+
+}
+
+
+/* ==========================================
+   DELIVERY
+========================================== */
+
+.checkout-container {
+
+    max-width: 860px;
+
+    margin: 65px auto;
+
+    padding: 20px;
+
+}
+
+
+.checkout-card {
+
+    background: rgba(255,255,255,0.95);
+
+    border: 1px solid #ddd;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.10);
+
+}
+
+
+.checkout-card label {
+
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+.checkout-card input,
+.checkout-card select {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    margin-bottom: 22px;
+
+    outline: none;
+
+    background: white;
+
+}
+
+
+.checkout-card input:focus,
+.checkout-card select:focus {
+
+    border-color: #008b3a;
+
+}
+
+
+.two-column {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.main-button {
+
+    width: 100%;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #008b3a;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.main-button:hover {
+
+    background: #006b2d;
+
+}
+
+
+/* ==========================================
+   SECURITY
+========================================== */
+
+.security-box {
+
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.94);
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: center;
+
+}
+
+
+.security-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 50%;
+
+    background: #008b3a;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 25px;
+
+}
+
+
+/* ==========================================
+   ERROR
+========================================== */
+
+.error {
+
+    background: #ffe7e7;
+
+    color: #b00020;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================
+   PAYMENT
+========================================== */
+
+.payment-container {
+
+    max-width: 860px;
+
+    margin: 65px auto;
+
+    padding: 20px;
+
+}
+
+
+.payment-card {
+
+    border: 1px solid #ddd;
+
+    border-radius: 18px;
+
+    padding: 15px 28px;
+
+    background: rgba(255,255,255,0.95);
+
+}
+
+
+.payment-option {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 20px 5px;
+
+    border-bottom: 1px solid #ddd;
+
+    cursor: pointer;
+
+}
+
+
+.payment-option:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.payment-option input {
+
+    width: 22px;
+
+    height: 22px;
+
+    accent-color: #008b3a;
+
+}
+
+
+.payment-option strong {
+
+    font-size: 18px;
+
+}
+
+
+.payment-option p {
+
+    margin-top: 7px;
+
+    color: #555;
+
+}
+
+
+/* ==========================================
+   NOTES
+========================================== */
+
+.notes-label {
+
+    display: block;
+
+    margin-top: 25px;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+}
+
+
+textarea {
+
+    width: 100%;
+
+    height: 120px;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    resize: vertical;
+
+    outline: none;
+
+    margin-bottom: 25px;
+
+    background: rgba(255,255,255,0.95);
+
+}
+
+
+/* ==========================================
+   SUMMARY
+========================================== */
+
+.summary-card {
+
+    border: 1px solid #ddd;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    background: rgba(255,255,255,0.95);
+
+}
+
+
+.summary-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    font-size: 17px;
+
+}
+
+
+.summary-card hr {
+
+    border: none;
+
+    border-top: 1px dashed #ccc;
+
+    margin: 15px 0;
+
+}
+
+
+.summary-row.total {
+
+    color: #006b2d;
+
+    font-size: 21px;
+
+    padding-bottom: 25px;
+
+}
+
+
+.summary-row.total strong {
+
+    font-size: 24px;
+
+}
+
+
+/* ==========================================
+   PLACE ORDER
+========================================== */
+
+.place-order-button {
+
+    width: 100%;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #008b3a;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.place-order-button:hover {
+
+    background: #006b2d;
+
+}
+
+
+/* ==========================================
+   SECURE PAYMENT
+========================================== */
+
+.secure-payment {
+
+    margin-top: 30px;
+
+    padding: 22px;
+
+    background: rgba(255,255,255,0.94);
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.shield {
+
+    background: #008b3a;
+
+    color: white;
+
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.secure-text h3 {
+
+    color: #006b2d;
+
+    margin-bottom: 7px;
+
+}
+
+
+.secure-text p {
+
+    color: #555;
+
+}
+
+
+.payment-logos {
+
+    margin-left: auto;
+
+    display: flex;
+
+    gap: 18px;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================
+   SUCCESS PAGE
+   SAME 4TH IMAGE
+========================================== */
+
+.success-page {
+
+    min-height: 100vh;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.40),
+            rgba(255,255,255,0.40)
+        ),
+
+        url("plant-bg.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+}
+
+
+.success-card {
+
+    width: 760px;
+
+    max-width: 95%;
+
+    background: rgba(255,255,255,0.95);
+
+    border-radius: 22px;
+
+    padding: 50px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.18);
+
+}
+
+
+.success-icon {
+
+    width: 135px;
+
+    height: 135px;
+
+    margin: 0 auto 28px;
+
+    border: 5px solid #399b35;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #399b35;
+
+    font-size: 75px;
+
+    font-weight: bold;
+
+}
+
+
+.success-card h1 {
+
+    color: #075f18;
+
+    font-size: 40px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.leaf-divider {
+
+    color: #69bd55;
+
+    margin-bottom: 22px;
+
+}
+
+
+.order-label {
+
+    font-size: 23px;
+
+}
+
+
+.order-id {
+
+    color: #075f18;
+
+    font-size: 45px;
+
+    font-weight: bold;
+
+    margin: 10px 0 22px;
+
+}
+
+
+.thank-you {
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.delivery-message {
+
+    font-size: 18px;
+
+    color: #555;
+
+    margin-bottom: 30px;
+
+}
+
+
+.shopping-button {
+
+    display: inline-block;
+
+    background: #4cae3f;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 16px 30px;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .two-column {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+
+    .secure-payment {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .payment-logos {
+
+        margin-left: 0;
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+
+    .success-card {
+
+        padding: 35px 20px;
+
+    }
+
+
+    .success-card h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+
+.plants-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.plants-container h1 {
+    color: #1b5e20;
+    font-size: 36px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.plant-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.plant-card:hover {
+    transform: translateY(-8px);
+}
+
+.plant-image {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+    background: #f1f8e9;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.plant-card h2 {
+    color: #2e7d32;
+}
+
+.plant-card h3 {
+    color: #1b5e20;
+    font-size: 22px;
+}
+
+.plant-card p {
+    color: #666;
+}
+
+.add-cart-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #2e7d32;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-cart-btn:hover {
+    background: #1b5e20;
+}
+
+.cart-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+.cart-container h1 {
+    text-align: center;
+    color: #1b5e20;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cart-item h2 {
+    color: #2e7d32;
+}
+
+.cart-total {
+    background: white;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 15px;
+    text-align: right;
+}
+
+.checkout-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.checkout-btn:hover {
+    background: #1b5e20;
+}
+
+.empty-cart {
+    background: white;
+    padding: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+/* =========================================
+   MY ORDERS PAGE
+   ========================================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background-image: url("/static/images/plant-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.my-order-header {
+    background: #1b5e20;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.my-order-header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.my-order-header p {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   ORDERS CONTAINER
+   ========================================= */
+
+.orders-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 35px auto;
+}
+
+
+/* =========================================
+   ORDER CARD
+   ========================================= */
+.order-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   ORDER HEADER
+   ========================================= */
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.order-header h2 {
+    margin: 0;
+    color: #1b5e20;
+}
+
+.order-date {
+    color: #666;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.status {
+    background: #dff3df;
+    color: #2e7d32;
+
+    padding: 8px 18px;
+    border-radius: 20px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   PLANTS HEADING
+   ========================================= */
+
+.plants-heading {
+    color: #2e7d32;
+    margin-top: 22px;
+}
+
+
+/* =========================================
+   PLANT ITEM
+   ========================================= */
+
+.plant-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #f7fff7;
+
+    padding: 15px;
+    margin: 10px 0;
+
+    border: 1px solid #d9ead9;
+    border-radius: 10px;
+}
+
+.plant-info h3 {
+    margin: 0 0 7px;
+    color: #2e7d32;
+}
+
+.plant-info p {
+    margin: 4px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.plant-total {
+    color: #1b5e20;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* =========================================
+   TOTAL
+   ========================================= */
+
+.order-total {
+    text-align: right;
+
+    border-top: 1px solid #ddd;
+
+    margin-top: 18px;
+    padding-top: 15px;
+
+    color: #1b5e20;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   NO ORDERS
+   ========================================= */
+.empty-orders {
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    padding: 45px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+}
+
+.empty-orders h2 {
+    color: #2e7d32;
+}
+
+.shop-btn {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 11px 22px;
+
+    background: #2e7d32;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+}
+
+.shop-btn:hover {
+    background: #1b5e20;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .orders-container {
+        width: 94%;
+    }
+
+    .order-card {
+        padding: 18px;
+    }
+
+    .plant-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .plant-total {
+        align-self: flex-end;
+    }
+
+}
+
+
+
+.checkout-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: #198754;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(25, 135, 84, 0.25);
+}
+
+.checkout-btn:hover {
+    background: #146c43;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(25, 135, 84, 0.35);
+}
+
+.checkout-btn:active {
+    transform: translateY(0);
+}

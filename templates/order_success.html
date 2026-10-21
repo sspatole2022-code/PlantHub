@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Order Placed Successfully
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sanikaOrder.css') }}">
+
+</head>
+
+
+<body class="success-page">
+
+
+<div class="success-container">
+
+
+    <div class="success-card">
+
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <h1>
+            Order Placed Successfully!
+        </h1>
+
+
+        <div class="leaf-divider">
+            ───── 🌿 ─────
+        </div>
+
+
+        <p class="order-label">
+            Your Order ID is:
+        </p>
+
+
+        <div class="order-id">
+            #{{ order_id }}
+        </div>
+        <p class="order-label">
+            Expected Delivery Date:
+        </p>
+
+<div class="order-id" id="deliveryDate"></div>
+
+        <p class="thank-you">
+
+            Thank you for shopping with
+
+            <strong>
+                PlantHub
+            </strong>
+
+        </p>
+
+
+        <p class="delivery-message">
+
+            Your plants will be delivered to
+            your provided address soon.
+
+        </p>
+
+
+        <a
+
+            href="{{ url_for('catalog') }}"
+
+            class="shopping-button"
+
+        >
+
+            🛒 Continue Shopping
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+<script>
+
+    var today = new Date();
+
+    today.setDate(today.getDate() + 5);
+
+    var date = today.getDate();
+    var month = today.getMonth() + 1;
+    var year = today.getFullYear();
+
+    document.getElementById("deliveryDate").innerHTML =
+        date + "-" + month + "-" + year;
+
+</script>
+</html>

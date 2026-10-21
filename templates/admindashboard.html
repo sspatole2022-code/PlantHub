@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Plant Nursery</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admindash.css') }}">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            🌿 Nursery Admin
+        </div>
+
+        <a href="{{ url_for('admin_dashboard') }}">
+            🏠 Dashboard
+        </a>
+
+        <a href="{{ url_for('admin_users') }}">
+            👥 Users
+        </a>
+
+        <a href="{{ url_for('admin_plants') }}">
+            🌱 Plants
+        </a>
+
+        <a href="{{ url_for('admin_pots') }}">
+            🪴 Pots
+        </a>
+
+        <a href="{{ url_for('admin_seeds') }}">
+            🌾 Seeds
+        </a>
+
+        <a href="{{ url_for('admin_fertilizers') }}">
+            🧪 Fertilizers
+        </a>
+
+        <a href="{{ url_for('admin_issue') }}">
+            📞 Contact Issues
+        </a>
+
+        <a href="{{ url_for('admin_orders') }}">
+            📦 Placed Orders
+        </a>
+
+        <a href="{{ url_for('admin_logout') }}">
+            🚪 Logout
+        </a>
+
+    </div>
+
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+        <div class="topbar">
+            <h1>Admin Dashboard</h1>
+
+            <p>
+                Welcome, {{ session['admin_username'] }}
+            </p>
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">👥</div>
+                <h2>Users</h2>
+                <p>Manage registered users</p>
+
+                <a href="{{ url_for('admin_users') }}">
+                    View Users
+                </a>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🌱</div>
+                <h2>Plants</h2>
+                <p>Add, edit or remove plants</p>
+
+                <a href="{{ url_for('admin_plants') }}">
+                    Manage Plants
+                </a>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🪴</div>
+                <h2>Pots</h2>
+                <p>Manage nursery pots</p>
+
+                <a href="{{ url_for('admin_pots') }}">
+                    Manage Pots
+                </a>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🌾</div>
+                <h2>Seeds</h2>
+                <p>Manage seeds</p>
+
+                <a href="{{ url_for('admin_seeds') }}">
+                    Manage Seeds
+                </a>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🧪</div>
+                <h2>Fertilizers</h2>
+                <p>Manage fertilizers</p>
+
+                <a href="{{ url_for('admin_fertilizers') }}">
+                    Manage Fertilizers
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="icon">📦</div>
+                <h2>Customer Orders</h2>
+                <p>Manage Orders</p>
+
+                <a href="{{ url_for('admin_orders') }}">
+                    Manage Issues
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="icon">📞</div>
+                <h2>Customer Issues</h2>
+                <p>Manage Issues</p>
+
+                <a href="{{ url_for('admin_issue') }}">
+                    Manage Issues
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

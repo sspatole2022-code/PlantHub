@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Add Plant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container mt-5 border border-dark rounded mx-auto p-4">
+
+    <h2 class="text-success mb-4">
+        Add New {{ item_type|capitalize }}
+    </h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Item Name
+            </label>
+
+            <input type="text" name="item_name" class="form-control" required>
+
+        </div>
+        <div class="mb-3">
+            <select name="category_id" class="form-select" id="category_id" required>
+
+                <option value="">
+                    -- Select Category --
+                </option>
+
+                {% for category in categories %}
+
+                <option value="{{ category.category_id }}">
+                    {{ category.category_name }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+        </div>
+        <!-- Plant Category -->
+
+        <div class="mb-3" id="plantCategoryDiv" style="display: none;">
+
+            <label class="form-label">
+                Plant Category
+            </label>
+
+            <select name="plant_category_id" id="plant_category_id" class="form-select">
+
+                <option value="">
+                    -- Select Plant Category --
+                </option>
+
+                <option value="1">
+                    Indoor Plants
+                </option>
+
+                <option value="2">
+                    Flowering Plants
+                </option>
+
+                <option value="4">
+                    Fruit Plants
+                </option>
+
+                <option value="3">
+                    Medicinal Plants
+                </option>
+
+            </select>
+
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label">
+                Price
+            </label>
+
+            <input type="number" name="price" class="form-control" required>
+
+        </div>
+
+         <div class="mb-3">
+
+            <label class="form-label">
+                Stock
+            </label>
+
+            <input type="number" name="stock" class="form-control" min="0" value="0" required>
+
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label">
+                Image File Name
+            </label>
+
+            <input type="file" name="image" class="form-control" placeholder="example.jpg" accept="image/*" required>
+
+            
+        </div>
+
+
+        <button type="submit"
+                class="btn btn-success">
+            Add {{ item_type|capitalize }}
+        </button>
+
+        {% if item_type == 'plant' %}
+
+<a href="{{ url_for('admin_plants') }}"
+   class="btn btn-secondary">
+    Cancel
+</a>
+
+{% elif item_type == 'pot' %}
+
+<a href="{{ url_for('admin_pots') }}"
+   class="btn btn-secondary">
+    Cancel
+</a>
+
+{% elif item_type == 'seed' %}
+
+<a href="{{ url_for('admin_seeds') }}"
+   class="btn btn-secondary">
+    Cancel
+</a>
+
+{% elif item_type == 'fertilizer' %}
+
+<a href="{{ url_for('admin_fertilizers') }}"
+   class="btn btn-secondary">
+    Cancel
+</a>
+
+{% endif %}
+
+    </form>
+
+</div>
+<script>
+
+document.getElementById("category_id").addEventListener("change", function () {
+
+    let categoryId = this.value;
+
+    let plantCategoryDiv =
+        document.getElementById("plantCategoryDiv");
+
+    let plantCategory =
+        document.getElementById("plant_category_id");
+
+
+    /*
+        category_id = 1
+        means Plants
+    */
+
+    if (categoryId === "1") {
+
+        // Show Plant Category
+        plantCategoryDiv.style.display = "block";
+
+        // Plant category must be selected
+        plantCategory.required = true;
+
+    }
+
+    else {
+
+        // Hide Plant Category
+        plantCategoryDiv.style.display = "none";
+
+        // Plant category is not required
+        plantCategory.required = false;
+
+        // Clear previous selection
+        plantCategory.value = "";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

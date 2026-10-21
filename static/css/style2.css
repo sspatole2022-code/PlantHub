@@ -1,0 +1,833 @@
+
+
+/* ================= PROFILE BUTTON ================= */
+
+.profile-btn {
+    height: 42px;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.profile-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.profile-btn i {
+    font-size: 20px;
+}
+/* ================= PROFILE BUTTON ================= */
+
+.custom-btn {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+    border: none !important;
+    border-radius: 50% !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent !important;
+    color: #ffffff !important;
+
+    font-size: 27px;
+
+    transition: all 0.3s ease;
+}
+
+/* Icon */
+.custom-btn i {
+    font-size: 27px;
+    line-height: 1;
+}
+
+/* Hover Effect */
+.custom-btn:hover {
+    color: #d8f3dc !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    transform: scale(1.08);
+}
+
+/* Click effect */
+.custom-btn:active {
+    transform: scale(0.95);
+}
+/*section1 of catalog*/
+
+.hero-section{
+    background: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("images/cathome.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 400px;
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+
+    margin-top: 30px;
+   
+}
+.hero-section h2{
+    font-size: 70px;
+    color: rgb(114, 212, 17);
+    font-family: 'Brush Script MT','Lucida Handwriting',cursive;
+}
+.hero-section p{
+    padding-top: 7px;
+    text-align: center;
+}
+
+/*Categroy section*/
+
+.catalog-section{
+    margin-top: 60px;
+    justify-content: center;
+    padding: 40px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.card{
+    border-radius: 30px !important;
+    overflow: hidden;
+    
+}
+.plant-card .btn-success{
+    background-color: #004100;
+}
+.plant-card img{
+    height: 200px;
+}
+
+
+.plant-card img{
+    width: 100%;
+    height: 150px;      /* Same height for all images */
+    object-fit: cover;  /* Crop image without stretching */
+}
+
+.plant-card {
+    transition: all 0.3s ease;
+    
+}
+.plant-card h5{
+    font-weight: bold;
+}
+.plant-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/*================  Contact ================  */
+.contact {
+    padding: 50px;
+    background: url("images/care_plant_bg.png") no-repeat center center/cover;
+
+}
+
+/* Heading */
+.banner-content {
+    text-align: center;
+    color: #0b5d1e;
+}
+
+.banner-content h1 {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.banner-content p {
+    font-size: 20px;
+}
+.contact-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.contact-container {
+    max-width: 1150px;
+    margin: 0 auto;  
+    display: grid;
+    grid-template-columns: 0.9fr 1.4fr;
+    gap: 25px;
+}
+
+/*  LEFT SIDE  */
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+    padding: 20px;
+    border-radius: 22px;
+    box-sizing: border-box;
+}
+
+.contact-info h3 {
+    padding-left: 20px;
+    font-size: 27px;
+    color: #173b24;
+}
+
+.small-line {
+    width: 48px;
+    height: 3px;
+    background: #557d3d;
+    margin: 12px 0 28px;
+    margin-left: 20px;
+}
+
+
+/* Contact Item */
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+    border-bottom: 1px solid #d8ded2;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-icon {
+    min-width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+    color: #244c2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.contact-item h4 {
+    font-size: 17px;
+    color: #183a25;
+}
+
+.contact-item p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/*  RIGHT SIDE  */
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+/* Form Heading */
+
+.form-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  
+}
+
+.form-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #355b35;
+    font-size: 19px;
+}
+
+.form-title h3 {
+    color: #183b25;
+    font-size: 27px;
+}
+
+
+/* Input Row */
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+
+/* Input */
+
+.input-box {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.input-box i {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 16px 16px 16px 48px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.input-box input:focus {
+    border-color: #557d3d;
+}
+
+
+/* Message */
+
+.message-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.message-box i {
+    position: absolute;
+
+    left: 17px;
+    top: 18px;
+
+    color: #777;
+}
+
+.message-box textarea {
+    width: 100%;
+    padding: 16px 16px 16px 48px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+    border:none ;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.message-box textarea:focus {
+    border-color: #557d3d;
+}
+/* Issue Dropdown */
+
+.input-box select {
+    width: 100%;
+    padding: 16px 45px 16px 48px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+
+    border: none;
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    color: #0a0a0a;
+
+    box-sizing: border-box;
+    cursor: pointer;
+
+    appearance: none;
+}
+
+
+/* Placeholder */
+
+.input-box select:invalid {
+    color: #888;
+}
+
+
+/* Dropdown Options */
+
+.input-box select option {
+    color: #030303;
+    background: white;
+}
+
+
+/* Focus */
+
+.input-box select:focus {
+    border-color: #557d3d;
+}
+
+
+/* Dropdown Arrow - ONLY for select */
+
+.input-box:has(select)::after {
+    content: "\f282";
+    font-family: "bootstrap-icons";
+
+    position: absolute;
+    right: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 14px;
+
+
+    pointer-events: none;
+}
+
+/* Button */
+
+.contact-form button {
+    background: #315c2c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button i {
+    margin-left: 8px;
+}
+
+.contact-form button:hover {
+    background: #244c22;
+}
+
+.contact-form button:active {
+    transform: scale(0.96);
+}
+
+/* ===== Footer ===== */
+
+.footer {
+    position: relative;
+    background: rgb(2, 95, 2);
+    color: #ffffff;
+    padding-top: 65px;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+/* ===== Decorative Background ===== */
+
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(126, 217, 87, 0.08);
+    top: -180px;
+    left: -120px;
+}
+
+.footer::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(126, 217, 87, 0.06);
+    bottom: -170px;
+    right: -100px;
+}
+
+/* ===== Footer Container ===== */
+
+.footer-container {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 70px;
+}
+
+/* ===== Footer Boxes ===== */
+
+.footer-box {
+    padding: 5px;
+}
+
+.footer-box h2 {
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.footer-box h2 span {
+    color: #7ed957;
+}
+
+.footer-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-box h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+
+    width: 45px;
+    height: 3px;
+
+    background: #7ed957;
+    border-radius: 10px;
+}
+
+.footer-box p {
+    color: #c7d8cc;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 13px;
+}
+
+/* ===== Category Section ===== */
+
+.footer-box:nth-child(2) p {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-box:nth-child(2) p::before {
+    content: "›";
+    color: #7ed957;
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: -2px;
+}
+
+.footer-box:nth-child(2) p:hover {
+    color: #7ed957;
+    padding-left: 7px;
+}
+
+/* ===== Contact Icons ===== */
+
+.footer-box:nth-child(3) p {
+    display: flex;
+    align-items: center;
+}
+
+.footer-box:nth-child(3) p i {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: rgba(126, 217, 87, 0.12);
+    color: #7ed957;
+
+    border-radius: 50%;
+    margin-right: 12px;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.footer-box:nth-child(3) p:hover i {
+    background: #7ed957;
+    color: #102d1b;
+    transform: translateY(-2px);
+}
+
+/* ===== Footer Bottom ===== */
+
+.footer-bottom {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 50px auto 0;
+    padding: 22px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #aebfb3;
+    font-size: 14px;
+}
+
+.footer-bottom strong {
+    color: #7ed957;
+}
+
+@media (max-width:768px){
+    .indoor-section{
+        min-height: 30vh;
+
+    }
+   
+ 
+.indoor-plant{
+     padding-left: 50px;
+     font-size: 30;
+     
+}
+}
+@media (max-width:768px){
+    .contact {
+        width: 100%;
+        padding: 50px 15px;
+        overflow: hidden;
+    }
+
+    .contact .banner-content {
+        width: 100%;
+        text-align: center;
+        padding: 0 5px;
+        margin-bottom: 30px;
+    }
+
+    .contact .banner-content h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .contact .banner-content p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Contact information + form */
+    .contact-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    /* Left side */
+    .contact-info {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .contact-info h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .small-line {
+        margin-bottom: 25px;
+    }
+
+    /* Contact items */
+    .contact-item {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .contact-item h4 {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .contact-item p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 0;
+        word-break: break-word;
+    }
+
+    /* Right side - Form */
+    .contact-form {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .form-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .form-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .form-title h3 {
+        font-size: 21px;
+        margin: 0;
+    }
+
+    /* Name + Email */
+    .input-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .input-box {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .input-box input,
+    .input-box select {
+        width: 100%;
+        max-width: 100%;
+        font-size: 14px;
+        padding: 12px 12px 12px 40px;
+    }
+
+    /* Message */
+    .message-box {
+        width: 100%;
+        position: relative;
+        margin-top: 15px;
+    }
+
+    .message-box textarea {
+        width: 100%;
+        max-width: 100%;
+        min-height: 120px;
+        resize: vertical;
+        font-size: 14px;
+        padding: 12px 12px 12px 40px;
+    }
+
+    /* Send button */
+    .contact-form button {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 15px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding-top: 45px;
+    }
+
+    .footer-container {
+        width: 85%;
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-box:first-child {
+        grid-column: auto;
+    }
+
+    .footer-box h2 {
+        font-size: 30px;
+    }
+
+    .footer-bottom {
+        width: 85%;
+        margin-top: 35px;
+        text-align: center;
+    
+}
+}

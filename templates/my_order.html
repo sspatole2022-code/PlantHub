@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders - PlantHub</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sanikaOrder.css') }}">
+
+    
+</head>
+
+
+<body>
+
+
+<!-- Header -->
+
+<div class="my-order-header">
+
+    <h1>📦 My Orders</h1>
+
+    <p>
+        View your plant orders
+    </p>
+
+</div>
+
+
+<!-- Orders -->
+
+<div class="orders-container">
+
+
+{% if orders %}
+
+
+    {% for order in orders %}
+
+
+    <div class="order-card">
+
+
+        <!-- Order Information -->
+
+        <div class="order-header">
+
+            <div>
+
+                <h2>
+                    Order #{{ order.order_id }}
+                </h2>
+
+                <div class="order-date">
+
+                    📅 {{ order.order_date }}
+
+                </div>
+
+            </div>
+
+
+            <span class="status">
+
+                {{ order.status }}
+
+            </span>
+
+        </div>
+
+
+        <!-- Plants -->
+
+        <h3 class="plants-heading">
+
+            🌱 Ordered Plants
+
+        </h3>
+
+
+        {% for item in order["items"] %}
+
+
+        <div class="plant-item">
+
+
+            <div class="plant-info">
+
+                <h3>
+
+                    {{ item.plant_name }}
+
+                </h3>
+
+                <p>
+
+                    Price:
+                    ₹{{ "%.2f"|format(item.price) }}
+
+                </p>
+
+                <p>
+
+                    Quantity:
+                    {{ item.quantity }}
+
+                </p>
+
+            </div>
+
+
+            <div class="plant-total">
+
+                ₹{{ "%.2f"|format(item.item_total) }}
+
+            </div>
+
+
+        </div>
+
+
+        {% endfor %}
+
+
+        <!-- Total -->
+
+        <div class="order-total">
+
+            Total Amount:
+            ₹{{ "%.2f"|format(order.total_amount) }}
+
+        </div>
+
+
+    </div>
+
+
+    {% endfor %}
+
+
+{% else %}
+
+
+    <!-- No Orders -->
+
+    <div class="empty-orders">
+
+        <h2>
+            🛒 No Orders Yet
+        </h2>
+
+        <p>
+            You have not placed any order yet.
+        </p>
+
+        <a href="{{ url_for('catalog') }}"
+           class="shop-btn">
+
+            🌱 Continue Shopping
+
+        </a>
+
+    </div>
+
+
+{% endif %}
+
+
+</div>
+
+
+</body>
+
+</html>

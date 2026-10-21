@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlantHub - User Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/user_dashbord.css')}}">
+</head>
+
+<body>
+
+    <!-- ================= TOP HEADER ================= -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            <span>Plant</span><b>Hub</b>
+        </div>
+
+        <a href="{{ url_for('catalog') }}" class="back-btn">
+            <i class="bi bi-arrow-left"></i>
+            <span>Back</span>
+        </a>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD AREA ================= -->
+
+    <section class="dashboard-wrapper">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="dashboard-sidebar">
+
+            <div class="sidebar-title">
+
+                <div class="sidebar-user-icon">
+                    <i class="bi bi-person"></i>
+                </div>
+
+                <div>
+                     <span>{{ session.get('username', 'users') }}</span>
+                    <p>PlantHub User</p>
+                </div>
+
+            </div>
+
+
+            <!-- MENU -->
+
+            <div class="sidebar-menu">
+
+                <p class="menu-heading">MENU</p>
+
+                <a href="{{ url_for('dashboard') }}"
+                   class="dashboard-menu">
+
+                    <i class="bi bi-person"></i>
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a href="{{ url_for('my_order') }}"
+                   class="dashboard-menu">
+
+                    <i class="bi bi-box-seam"></i>
+                    <span>My Orders</span>
+
+                </a>
+
+
+                <a href="{{ url_for('cart') }}"
+                   class="dashboard-menu">
+
+                    <i class="bi bi-cart3"></i>
+                    <span>My Cart</span>
+
+                </a>
+
+
+                <p class="menu-heading account-heading">ACCOUNT</p>
+
+
+                <a href="{{ url_for('logout') }}"
+                   class="dashboard-menu logout-menu">
+
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="dashboard-main">
+
+
+            <!-- WELCOME AREA -->
+
+            <div class="dashboard-welcome">
+
+                <div class="welcome-content">
+
+                    <p class="welcome-small">
+                        WELCOME
+                    </p>
+
+                    <h1>
+                        Hello,
+                        <span>{{ session.get('username', 'User') }}</span>! 
+                    </h1>
+
+                    <p class="welcome-text">
+                        Manage your plants and orders from your PlantHub dashboard.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-decoration">
+                        <img src="{{ url_for('static', filename='images/care_plant.png') }}" alt="Plant Care">
+                </div>
+
+            </div>
+
+
+            <!-- ================= TWO CARDS ================= -->
+
+            <div class="dashboard-boxes">
+
+
+                <!-- CART BOX -->
+
+                <div class="dashboard-box cart-box">
+
+                    <div class="box-icon">
+                        <i class="bi bi-cart3"></i>
+                    </div>
+
+                    <div class="box-content">
+
+                        <p class="box-label">
+                            MY CART
+                        </p>
+    
+                       
+
+                        <p class="box-description">
+                            Items in your cart
+                        </p>
+
+                    </div>
+
+                    <a href="{{ url_for('cart') }}"
+                       class="box-button">
+
+                        View Cart
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ORDERS BOX -->
+
+                <div class="dashboard-box order-box">
+
+                    <div class="box-icon">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+
+                    <div class="box-content">
+
+                        <p class="box-label">
+                            MY ORDERS
+                        </p>
+
+                        
+
+                        <p class="box-description">
+                            Orders placed
+                        </p>
+
+                    </div>
+
+                    <a href="{{ url_for('my_order') }}"
+                       class="box-button">
+
+                        View Orders
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </main>
+
+    </section>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
+

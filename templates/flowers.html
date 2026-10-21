@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Plants Guidance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesanika.css') }}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
+            <div class="container-fluid">
+                <h2 class="fw-bold"><span class="text-light">Plant</span><span class="hub">Hub</span></h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url_for('catalog') }}">Category</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('flowergui') }}">Plant Care</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+
+                        {% if session.get('user_id') %}
+
+                        <!-- My Profile -->
+                        <a href="{{ url_for('dashboard') }}" class="profile-btn">
+                            <i class="bi bi-person-circle"></i>
+                            <span>My Profile</span>
+                        </a>
+
+                        {% else %}
+
+                        <!-- User is NOT logged in -->
+                        <button class="btn btn-outline-light rounded-pill" onclick="window.location.href='/login'">
+                            Login
+                        </button>
+
+                        <button class="btn btn-outline-light rounded-pill px-4"
+                            onclick="window.location.href='/register'">
+                            Sign Up
+                        </button>
+
+                        {% endif %}
+
+                       
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="guide-page">
+
+        <section class="header">
+            <div class="header-plant">🌸</div>
+            <div>
+                <h1>Flower Plants Guidance</h1>
+                <p>Simple care tips to keep your flower plants healthy, colorful and blooming.</p>
+            </div>
+            <div class="header-plant">🌹</div>
+        </section>
+
+        <section class="cards">
+
+            <div class="card">
+                <h2>❶ Light</h2>
+                <div class="icon">☀️🌸</div>
+                <ul>
+                    <li>Most flowering plants need 4–6 hours of sunlight daily.</li>
+                    <li>Provide morning sunlight.</li>
+                    <li>Avoid strong afternoon sunlight for delicate flowers.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>❷ Watering</h2>
+                <div class="icon">💧🌸</div>
+                <ul>
+                    <li>Water regularly according to the plant's needs.</li>
+                    <li>Keep soil moist but avoid waterlogging.</li>
+                    <li>Water early morning or late evening.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>❸ Soil</h2>
+                <div class="icon">🌱</div>
+                <ul>
+                    <li>Use fertile, well-draining soil.</li>
+                    <li>Good drainage helps prevent root rot.</li>
+                    <li>Mix compost for better growth.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>❹ Fertilizer</h2>
+                <div class="icon">🌿</div>
+                <ul>
+                    <li>Use flowering-plant fertilizer.</li>
+                    <li>Apply fertilizer every 2–4 weeks.</li>
+                    <li>Do not use excessive fertilizer.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>❺ Temperature</h2>
+                <div class="icon">🌡️</div>
+                <ul>
+                    <li>Most flower plants grow well in moderate temperatures.</li>
+                    <li>Protect from extreme cold, frost and hot winds.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>❻ Pruning</h2>
+                <div class="icon">✂️🌸</div>
+                <ul>
+                    <li>Remove dried flowers regularly.</li>
+                    <li>Prune weak or damaged branches.</li>
+                    <li>Pruning encourages healthy flowering.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>❼ Pest Control</h2>
+                <div class="icon">🔍🍃</div>
+                <ul>
+                    <li>Check plants regularly for pests and diseases.</li>
+                    <li>Remove affected leaves or parts.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>❽ Support & Care</h2>
+                <div class="icon">🌸🪴</div>
+                <ul>
+                    <li>Provide support to tall plants.</li>
+                    <li>Mulch around the plant to retain moisture.</li>
+                    <li>Keep the area clean and weed-free.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

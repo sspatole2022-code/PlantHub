@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - PlantHub</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sanikaOrder.css') }}">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+
+
+
+
+<!-- PAYMENT -->
+
+<main class="payment-container">
+
+
+    <div class="page-heading">
+
+        <h1>
+            💳 Payment Method
+        </h1>
+
+        <p>
+            Select your preferred payment method
+        </p>
+
+    </div>
+
+
+    {% if error %}
+
+    <div class="error">
+        {{ error }}
+    </div>
+
+    {% endif %}
+
+
+    <form
+
+        method="POST"
+
+        action="{{ url_for('payment') }}"
+
+
+    >
+
+
+        <!-- PAYMENT METHODS -->
+
+        <div class="payment-card">
+
+
+            <label class="payment-option">
+
+                <input
+
+                    type="radio"
+
+                    name="payment_method"
+
+                    value="Cash on Delivery"
+
+                    checked
+
+                >
+
+                <div>
+
+                    <strong>
+                        Cash on Delivery
+                    </strong>
+
+                    <p>
+                        Pay when your plant is delivered
+                    </p>
+
+                </div>
+
+            </label>
+
+
+          
+
+            <label class="payment-option">
+
+                <input
+
+                    type="radio"
+
+                    name="payment_method"
+
+                    value="Credit / Debit Card"
+
+                >
+
+                <div>
+
+                    <strong>
+                        Credit / Debit Card
+                    </strong>
+
+                    <p>
+                        Pay using your card
+                    </p>
+
+                </div>
+
+            </label>
+
+
+        </div>
+
+
+
+        <!-- NOTES -->
+
+        <label class="notes-label">
+
+            Order Notes (Optional)
+
+        </label>
+
+
+        <textarea
+
+            id="order_notes"
+
+            name="order_notes"
+
+            placeholder="Any special instructions for your order..."
+
+        ></textarea>
+
+
+
+        <!-- SUMMARY -->
+
+        <!-- SUMMARY -->
+
+<div class="summary-card">
+
+    
+
+   <!-- ORDERED PLANTS -->
+
+<div class="ordered-plants">
+
+    <h2>🌱 Ordered Plants</h2>
+
+    {% if cart_items %}
+
+        {% for item in cart_items %}
+
+        <div class="order-item">
+
+            <div class="order-item-details">
+
+                <h3>
+                    {{ item["item_name"] }}
+                </h3>
+
+                <p>
+                    Quantity: {{ item["quantity"] }}
+                </p>
+
+                <p>
+                    Price: ₹{{ "%.2f"|format(item["price"]) }}
+                </p>
+
+            </div>
+
+            <strong class="item-total">
+                ₹{{ "%.2f"|format(item["item_total"]) }}
+            </strong>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No plants added to cart.</p>
+
+    {% endif %}
+
+</div>
+
+    <hr>
+
+
+    <!-- SUBTOTAL -->
+
+    <div class="summary-row">
+
+        <span>
+            Subtotal
+        </span>
+
+        <strong>
+            ₹{{ "%.2f"|format(subtotal) }}
+        </strong>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- TOTAL -->
+
+    <div class="summary-row total">
+
+        <span>
+            Total Amount
+        </span>
+
+        <strong>
+            ₹{{ "%.2f"|format(total_amount) }}
+        </strong>
+
+    </div>
+
+
+    <!-- PLACE ORDER -->
+
+    <button
+        type="submit"
+        class="place-order-button"
+    >
+        🔒 PLACE ORDER
+    </button>
+
+</div>
+
+</form>
+
+
+
+    <!-- SECURE PAYMENT -->
+
+    <div class="secure-payment">
+
+
+        <div class="shield">
+            🛡️
+        </div>
+
+
+        <div class="secure-text">
+
+            <h3>
+                Secure & Safe Payments
+            </h3>
+
+            <p>
+                Your payment information is encrypted
+                and 100% secure.
+            </p>
+
+        </div>
+
+
+        <div class="payment-logos">
+
+            <span>UPI</span>
+
+            <span>VISA</span>
+
+            <span>●●</span>
+
+            <span>RuPay</span>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+
+</body>
+
+</html>

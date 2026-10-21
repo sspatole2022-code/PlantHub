@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f2;
+    display: flex;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #004100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 25px;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #9ef034;
+    padding-left: 32px;
+}
+
+
+/* Main */
+
+.main {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 30px;
+}
+
+
+/* Top Bar */
+
+.topbar {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.topbar h1 {
+    color: #004100;
+}
+
+.topbar p {
+    color: #666;
+}
+
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    color: #004100;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+    background: #004100;
+    color: white;
+    text-decoration: none;
+
+    padding: 10px 18px;
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+.card a:hover {
+    background: #3f5428;
+}
+
+
+/* Responsive */
+
+@media(max-width: 900px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}

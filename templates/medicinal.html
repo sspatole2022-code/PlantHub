@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicinal Plants Guidance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesanika.css') }}">
+</head>
+<body>
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
+            <div class="container-fluid">
+                <h2 class="fw-bold"><span class="text-light">Plant</span><span class="hub">Hub</span></h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url_for('catalog') }}">Category</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('medicinalgui') }}">Plant Care</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+
+    {% if session.get('user_id') %}
+
+        <!-- My Profile -->
+                        <a href="{{ url_for('dashboard') }}" class="profile-btn">
+                            <i class="bi bi-person-circle"></i>
+                            <span>My Profile</span>
+                        </a>
+
+    {% else %}
+
+        <!-- User is NOT logged in -->
+        <button class="btn btn-outline-light rounded-pill"
+                onclick="window.location.href='/login'">
+            Login
+        </button>
+
+        <button class="btn btn-outline-light rounded-pill px-4"
+                onclick="window.location.href='/register'">
+            Sign Up
+        </button>
+
+    {% endif %}
+
+    <button class="btn custom-btn rounded-pill">
+        <i class="bi bi-bag"></i>
+    </button>
+
+</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<div class="guide-page">
+ 
+<section class="header">
+    <div class="header-plant">🌿</div>
+    <div>
+        <h1>Medicinal Plants Guidance</h1>
+        <p>Simple tips to grow healthy and useful medicinal plants.</p>
+    </div>
+    <div class="header-plant">🌿</div>
+</section>
+
+<section class="cards">
+
+<div class="card"><h2>❶ Light</h2><div class="icon">☀️🌱</div>
+<ul><li>Provide sufficient sunlight according to the plant variety.</li><li>Most medicinal plants need 4–6 hours of sunlight daily.</li></ul></div>
+
+<div class="card"><h2>❷ Watering</h2><div class="icon">💧🌱</div>
+<ul><li>Keep the soil slightly moist but avoid excessive watering.</li><li>Water in the morning for most plants.</li></ul></div>
+
+<div class="card"><h2>❸ Soil</h2><div class="icon">🌱</div>
+<ul><li>Use organic, nutrient-rich and well-draining soil.</li><li>Avoid heavy soil that retains too much water.</li></ul></div>
+
+<div class="card"><h2>❹ Fertilizer</h2><div class="icon">🌿</div>
+<ul><li>Use organic fertilizer or compost during the growing season.</li><li>Do not use excessive fertilizer.</li></ul></div>
+
+<div class="card"><h2>❺ Temperature</h2><div class="icon">🌡️</div>
+<ul><li>Keep plants in moderate temperature.</li><li>Protect them from extreme cold, frost and strong hot winds.</li></ul></div>
+
+<div class="card"><h2>❻ Cleaning</h2><div class="icon">🍃</div>
+<ul><li>Wipe dust from leaves regularly.</li><li>Remove yellow, dry or damaged leaves.</li></ul></div>
+
+<div class="card"><h2>❼ Pruning & Harvesting</h2><div class="icon">✂️🌿</div>
+<ul><li>Prune regularly to promote healthy growth.</li><li>Harvest leaves or parts properly without damaging the plant.</li></ul></div>
+
+<div class="card"><h2>❽ General Care</h2><div class="icon">🌱🤲</div>
+<ul><li>Avoid chemical pesticides when possible.</li><li>Keep plants clean and healthy.</li><li>Follow proper guidance before using plants medicinally.</li></ul></div>
+
+</section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

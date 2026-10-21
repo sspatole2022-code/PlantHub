@@ -1,0 +1,154 @@
+
+.navbar{
+    background:#004100;
+    
+}
+.navbar-toggler{
+    border: 2px solid white !important;
+}
+.navbar-toggler-icon{
+    filter: brightness(0) invert(1);
+}
+
+.navbar-nav .nav-link{
+    color: #fff !important;
+    margin: 0 8px;
+    padding: 8px 18px !important;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:hover{
+    background: rgba(50,205,50,0.25);
+    color: #fff !important;
+}
+
+/* Active Page Button */
+.navbar-nav .nav-link.active{
+    background: rgba(135,206,235,0.35);
+    color: #fff !important;
+    border: 1px solid white;
+    backdrop-filter: blur(5px);
+}
+
+.hub{
+    color:  rgb(137, 241, 33);
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+            linear-gradient(rgba(20,80,30,.65), rgba(20,80,30,.65)),
+            url("{{ url_for('static', filename='images/nursery-bg.jpg') }}");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        /* Navigation Bar */
+
+        .logout {
+            text-decoration: none;
+            color: white;
+
+            padding: 10px 20px;
+
+            border-radius: 25px;
+
+            background: #2e7d32;
+
+            transition: .3s;
+        }
+
+        .logout:hover {
+            background: #66bb6a;
+        }
+
+        /* Main */
+
+        .main {
+            min-height: calc(100vh - 75px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .welcome-box {
+
+            width: 650px;
+            max-width: 90%;
+
+            padding: 50px;
+
+            background: rgba(255,255,255,.13);
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow: 0 15px 35px rgba(0,0,0,.3);
+        }
+
+        .welcome-box i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #004100;
+        }
+
+        .welcome-box h1 {
+            font-size: 38px;
+            color: #004100;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .welcome-box p {
+            font-size: 18px;
+            color: #e8f5e9;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .plant-btn {
+            display: inline-block !important;
+
+            text-decoration: none !important;
+
+           
+            background-color: #e6f4e8 !important;
+          
+            padding: 13px 25px !important;
+
+            margin: 5px !important;
+
+            border-radius: 25px !important;
+
+            transition: .3s !important;
+        }
+
+        .plant-btn:hover {
+            background: #66bb6a;
+            transform: translateY(-3px);
+        }
+
+

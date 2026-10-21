@@ -1,0 +1,409 @@
+<html>
+
+<head>
+    <title>Plant Catalog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
+            <div class="container-fluid">
+                <h2 class="fw-bold"><span class="text-light">Plant</span><span class="hub">Hub</span></h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" aria-current="page" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/catalog">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about#plant-care">Plant Care</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+
+                        {% if session.get('user_id') %}
+
+                        <!-- My Profile -->
+                        <a href="{{ url_for('dashboard') }}" class="profile-btn">
+                            <i class="bi bi-person-circle"></i>
+                            <span>My Profile</span>
+                        </a>
+
+                        {% else %}
+
+                        <!-- User is NOT logged in -->
+                        <button class="btn btn-outline-light rounded-pill" onclick="window.location.href='/login'">
+                            Login
+                        </button>
+
+                        <button class="btn btn-outline-light rounded-pill px-4"
+                            onclick="window.location.href='/register'">
+                            Sign Up
+                        </button>
+
+                        {% endif %}
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="container-fluid hero-section">
+        <h2>Bring Nature Closer to You</h2>
+        <p>
+            Explore our wide variety of plants, from vibrant flowering plants to lush green foliage.<br>Let every plant
+            add freshness and happiness to your space.</p>
+    </section>
+    <section id="category" class="categories">
+
+        <div class="category-container">
+
+            <div class="category-box">
+                <a href="catalog">
+                    <img src="{{ url_for('static', filename='images/plantpornima.png') }}" alt="Indoor">
+                </a>
+                
+                <h3>Plants</h3>
+            </div>
+
+            <div class="category-box">
+                <a href="potcatalog">
+                <img src="{{ url_for('static', filename='images/pots.webp') }}" alt="Outdoor">
+
+                </a>
+                <h3>Pots</h3>
+            </div>
+
+            <div class="category-box">
+                <a href="fertilizercatalog">
+                <img src="{{ url_for('static', filename='images/fertilizer.jpg') }}" alt="Flower">
+
+                </a>
+                <h3>fertilizers</h3>
+            </div>
+
+            <div class="category-box">
+                <a href="seedcatalog">
+                <img src="{{ url_for('static', filename='images/seeds.jpg') }}" alt="Medicinal">
+
+                </a>
+                <h3>Seeds</h3>
+            </div>
+
+        </div>
+    </section>
+    <div class="section-title">
+
+        <span></span>
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <h2>Plants Category</h2>
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <span></span>
+
+    </div>
+    <section class="catalog-section">
+        <div class="card plant-card shadow" style="width: 15rem;">
+            <img src="{{url_for('static',filename='images/zendu.avif')}}" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Flowering Plants</h5>
+                <p class="card-text">Brighten your space with beautiful and colourful fkowers.</p>
+                <a href="/flowerplant" class="btn btn-success">Explore Now <i
+                        class="fa-sharp fa-solid fa-arrow-right-long"></i></a>
+            </div>
+        </div>
+        <div class="card plant-card shadow" style="width: 15rem;">
+            <img src="{{url_for('static',filename='images/indoor2.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Indoor Plants</h5>
+                <p class="card-text">Enhance your indoor environment with our indoor plants</p>
+                <a href="/indoorplant" class="btn btn-success">Explore Now <i
+                        class="fa-sharp fa-solid fa-arrow-right-long"></i></a>
+            </div>
+        </div>
+        <div class="card plant-card shadow" style="width: 15rem;">
+            <img src="{{url_for('static',filename='images/herbul.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Medicinal Plants</h5>
+                <p class="card-text">Natural and healthy medicinal plants for a better life.</p>
+                <a href="/medicinalplant" class="btn btn-success">Explore Now <i
+                        class="fa-sharp fa-solid fa-arrow-right-long"></i></a>
+            </div>
+        </div>
+        <div class="card plant-card shadow" style="width: 15rem;">
+            <img src="{{url_for('static',filename='images/fruitplant.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Fruit Plants</h5>
+                <p class="card-text">Grow your own fresh and healthy fruits at home</p>
+                <a href="/fruitplant" class="btn btn-success">Explore Now <i
+                        class="fa-sharp fa-solid fa-arrow-right-long"></i></a>
+            </div>
+        </div>
+
+    </section>
+    <section class="contact" id="contact">
+
+    <div class="banner-content">
+        <h1>Contact Us</h1>
+        <p>Have an issue with your order or need help with our products? We're here to help.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+
+            <h3>Get in Touch</h3>
+            <div class="small-line"></div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </div>
+
+                <div>
+                    <h4>Our Location</h4>
+                    <p>
+                        Kanifanath PlantHub Nursery,Kothrud, Pune - 411038,
+                        Maharashtra, India
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                </div>
+
+                <div>
+                    <h4>Email Us</h4>
+                    <p>kanifanathplantHub@gmail.com</p>
+                </div>
+            </div>
+
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="bi bi-clock-fill"></i>
+                </div>
+
+                <div>
+                    <h4>Working Hours</h4>
+                    <p>
+                        Mon - Sat: 9:00 AM - 7:00 PM<br>
+                        Sunday: 10:00 AM - 4:00 PM
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+
+            <div class="form-title">
+
+                <div class="form-icon">
+                    <i class="bi bi-send-fill"></i>
+                </div>
+
+                <div>
+                    <h3>Send Us a Message</h3>
+                    <div class="small-line"></div>
+                </div>
+
+            </div>
+
+
+            <form action="{{ url_for('contact') }}" method="POST">
+
+                 <!-- Name + Email + product name + date -->
+                    <div class="input-row">
+
+                        <div class="input-box">
+
+                            <i class="bi bi-person"></i>
+
+                            <input type="text" name="name" placeholder="Your Name" required>
+
+                        </div>
+
+
+                        <div class="input-box">
+
+                            <i class="bi bi-envelope"></i>
+
+                            <input type="email" name="email" placeholder="Your Email" required>
+
+                        </div>
+                        <div class="input-box">
+
+                            <i class="bi bi-person"></i>
+
+                            <input type="text" name="pro_name" placeholder="Product Name" required>
+
+                        </div>
+                        <div class="input-box">
+
+                            <i class="bi bi-person"></i>
+
+                            <input type="date" name="issue_date" id="issue_date" class="form-control"
+       value="{{ today }}" min="{{ today }}" max="{{ today }}" required>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Issue -->
+                    <div class="input-box">
+                        <i class="bi bi-exclamation-circle"></i>
+
+                        <select name="issue_type" id="issueType" required>
+                            <option value="disabled selected">Select Your Issue</option>
+                            <option value="Order Not Received">Order Not Received</option>
+                            <option value="Damaged Plant">Damaged Plant</option>
+                            <option value="Wrong Product Received">Wrong Product Received</option>
+                            <option value="Wrong Price">Wrong Price</option>
+                            <option value="Payment Problem">Payment Problem</option>
+                            <option value="Add to Cart Problem">Add to Cart Problem</option>
+                            <option value="Product Information">Product Information</option>
+                            <option value="Order Cancellation">Order Cancellation</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box" id="imageBox" style="display: none;">
+                        <i class="bi bi-image"></i>
+                        <input type="file" name="image" accept="image/*">
+                    </div>
+
+
+                <!-- Message -->
+                <div class="message-box">
+
+                    <i class="bi bi-pencil"></i>
+
+                    <textarea name="message" placeholder="Write your message..." rows="3" required></textarea>
+
+                </div>
+
+
+                <!-- Submit -->
+                <button type="submit">
+
+                    Send Message
+
+                    <i class="bi bi-send-fill"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h2>Plant<span>Hub</span></h2>
+            <p>
+                Bring nature closer to your home with beautiful,
+                healthy and fresh plants from PlantHub.
+            </p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Plant Categories</h3>
+            <p>Indoor Plants</p>
+            <p>Outdoor Plants</p>
+            <p>Flower Plants</p>
+            <p>Medicinal Plants</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+
+            <p>
+                <i class="bi bi-geo-alt-fill"></i>
+                Pune, Maharashtra, India
+            </p>
+
+            <p>
+                <i class="bi bi-telephone-fill"></i>
+                +91 98765 43210
+            </p>
+
+            <p>
+                <i class="bi bi-envelope-fill"></i>
+                kanifanathplantHub@gmail.com
+            </p>
+
+            <p>
+                <i class="bi bi-clock-fill"></i>
+                Mon - Sat : 9:00 AM - 7:00 PM
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            © 2026 <strong>PlantHub</strong>. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("{{ messages[0] }}");
+        </script>
+    {% endif %}
+{% endwith %}
+<script>
+        
+        document.getElementById("issueType").addEventListener("change", function () {
+            const imageBox = document.getElementById("imageBox");
+
+            if (this.value === "Damaged Plant") {
+                imageBox.style.display = "flex";
+            } else {
+                imageBox.style.display = "none";
+            }
+        });
+
+       
+    </script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

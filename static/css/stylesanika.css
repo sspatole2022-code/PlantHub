@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f8ed;
+    color: #173d1c;
+}
+/* ========== MAIN NAVBAR ============= */
+.navbar{
+    background:#004100;
+    
+}
+.navbar-toggler{
+    border: 2px solid white !important;
+}
+.navbar-toggler-icon{
+    filter: brightness(0) invert(1);
+}
+
+.navbar-nav .nav-link{
+    color: #fff !important;
+    margin: 0 8px;
+    padding: 8px 18px !important;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:hover{
+    background: rgba(50,205,50,0.25);
+    color: #fff !important;
+}
+
+/* Active Page Button */
+.navbar-nav .nav-link.active{
+    background: rgba(135,206,235,0.35);
+    color: #fff !important;
+    border: 1px solid white;
+    backdrop-filter: blur(5px);
+}
+
+.hub{
+    color:  rgb(137, 241, 33);
+}
+.guide-page {
+    margin-top: 20px;
+    width: 96%;
+    max-width: 1200px;
+    margin: 15px auto;
+    background: white;
+    border: 1px solid #719463;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+
+/* ================= PROFILE BUTTON ================= */
+
+.profile-btn {
+    height: 42px;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.profile-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.profile-btn i {
+    font-size: 20px;
+}
+/* HEADER */
+
+.header {
+    min-height: 220px;
+    padding: 25px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background: linear-gradient(
+        120deg,
+        #eaf4e1,
+        #ffffff,
+        #edf6e7
+    );
+    border-bottom: 1px solid #b8cda9;
+}
+
+.header > div:nth-child(2) {
+    flex: 1;
+}
+
+.header h1 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    color: #0b4b19;
+    margin-bottom: 15px;
+}
+
+.header p {
+    font-size: 19px;
+    color: #183c20;
+}
+
+.header-leaf {
+    font-size: 95px;
+}
+
+.header-plant {
+    font-size: 90px;
+}
+
+
+/* CARE CARDS */
+
+.cards {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.card {
+    min-height: 360px;
+    border: 1px solid #c8d9ba;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(50, 90, 40, 0.08);
+}
+
+.card h2 {
+    background: #eff6e8;
+    padding: 14px;
+    font-size: 21px;
+    color: #174b20;
+}
+
+.card h2:first-letter {
+    color: #327b2b;
+}
+
+.icon {
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 58px;
+    background: radial-gradient(
+        circle,
+        #f1f8e9,
+        #ffffff
+    );
+}
+
+.card ul {
+    padding: 10px 25px 20px 35px;
+}
+
+.card li {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+}
+
+.card li::marker {
+    color: #4d902f;
+}
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .plants {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+    .header-plant,
+    .header-leaf {
+        font-size: 60px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .guide-page {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .header {
+        padding: 25px 15px;
+        min-height: 180px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .header-plant,
+    .header-leaf {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .card {
+        min-height: auto;
+    }
+
+    .plants {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

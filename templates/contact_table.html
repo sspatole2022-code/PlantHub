@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Issues</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f7ed;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        h2 {
+            text-align: center;
+            color: #004100;;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .table-box {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 1100px;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: #004100;
+            color: white;
+            padding: 14px 12px;
+            text-align: center;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 13px 12px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+
+        tbody tr:hover {
+            background: #f5f9f3;
+        }
+
+        td:nth-child(8) {
+            max-width: 250px;
+            min-width: 200px;
+            text-align: left;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        td:nth-child(4),
+        td:nth-child(6) {
+            white-space: nowrap;
+        }
+
+        .issue-image {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .no-image {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .btn {
+            display: block;
+            width: 150px;
+            margin: 20px 0 0 auto;
+            padding: 12px;
+            text-align: center;
+            background: #004100;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            background: #0f4f20;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 98%;
+                padding: 15px;
+                margin: 20px auto;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>User Issues</h2>
+
+        <div class="table-box">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Issue ID</th>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Product Name</th>
+                        <th>Issue Date</th>
+                        <th>Issue Type</th>
+                        <th>Message</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for issue in issues %}
+
+                    <tr>
+                        <td>{{ issue.issue_id }}</td>
+
+                        <td>{{ issue.id }}</td>
+
+                        <td>{{ issue.name }}</td>
+
+                        <td>{{ issue.email }}</td>
+
+                        <td>{{ issue.product_name or '-' }}</td>
+
+                        <td>{{ issue.issue_date }}</td>
+
+                        <td>{{ issue.issue_type }}</td>
+
+                        <td>{{ issue.message }}</td>
+
+                        <td>
+                            {% if issue.image %}
+                                <img src="{{ url_for('static', filename='uploads/' + issue.image) }}"
+                                     class="issue-image"
+                                     alt="Issue Image">
+                            {% else %}
+                                <span class="no-image">No Image</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+                        <td colspan="9">No issues found.</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <a href="{{ url_for('admin_dashboard') }}" class="btn">Back</a>
+
+    </div>
+
+</body>
+
+</html>

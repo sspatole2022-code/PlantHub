@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Users | Plant Nursery</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_users.css') }}">
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+                <h1>👥 Registered Users</h1>
+                <p>View registered customers</p>
+            </div>
+
+            <a href="{{ url_for('admin_dashboard') }}" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- User Table -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>User ID</th>
+
+                        <th>Full Name</th>
+
+                        <th>Email</th>
+
+                        <th>Mobile</th>
+
+                        <th>Username</th>
+
+                       
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% if users %}
+
+                        {% for user in users %}
+
+                        <tr>
+
+                            <td>{{ user['id'] }}</td>
+
+                            <td>{{ user['fullname'] }}</td>
+
+                            <td>{{ user['email'] }}</td>
+
+                            <td>{{ user['mobile'] }}</td>
+
+                            <td>{{ user['username'] }}</td>
+
+                           
+                        </tr>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <tr>
+
+                            <td colspan="5" class="no-users">
+                                No registered users found.
+                            </td>
+
+                        </tr>
+
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

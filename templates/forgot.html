@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forgot Password | Kanifanath Nursery</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forgot.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="forgot-card">
+
+       
+
+        <!-- Heading -->
+        <h1>Forgot Password?</h1>
+
+        <p class="description">
+            Don't worry! Reset your password and<br>
+            get back to your <strong>Kanifanath Nursery</strong> account.
+        </p>
+
+        <!-- Decorative line -->
+        <div class="divider">
+            <span></span>
+            <i class="fa-solid fa-leaf"></i>
+            <span></span>
+        </div>
+
+        <!-- Form -->
+        <form method="POST" action="{{ url_for('forgot') }}">
+
+            <!-- Email -->
+            <div class="form-group">
+
+                <label>
+                   
+                    Email Address
+                </label>
+
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Enter your registered email" required >
+
+                </div>
+
+               
+
+            </div>
+
+
+            <!-- New Password -->
+            <div class="form-group">
+
+                <label>
+                   
+                    New Password
+                </label>
+
+                <div class="input-box">
+
+                   
+
+                    <input type="password" id="newPassword" name="new_password" placeholder="Enter new password" required>
+
+                   
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Confirm Password
+                </label>
+
+                <div class="input-box">
+
+                  
+
+                    <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm new password" required >
+
+                   
+
+                </div>
+
+            </div>
+
+
+            <!-- Reset Button -->
+            <button type="submit" class="reset-btn">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Reset Password
+
+            </button>
+
+        </form>
+
+
+        <!-- Back to Login -->
+        <a href="{{ url_for('login') }}" class="back-login">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Login
+
+        </a>
+
+
+        
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

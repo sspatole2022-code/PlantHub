@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <title>Plant Catalog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
+            <div class="container-fluid">
+                <h2 class="fw-bold"><span class="text-light">Plant</span><span class="hub">Hub</span></h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url_for('catalog') }}">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about#plant-care">Plant Care</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+
+    {% if session.get('user_id') %}
+
+         <!-- My Profile -->
+                        <a href="{{ url_for('dashboard') }}" class="profile-btn">
+                            <i class="bi bi-person-circle"></i>
+                            <span>My Profile</span>
+                        </a>
+
+    {% else %}
+
+        <!-- User is NOT logged in -->
+        <button class="btn btn-outline-light rounded-pill"
+                onclick="window.location.href='/login'">
+            Login
+        </button>
+
+        <button class="btn btn-outline-light rounded-pill px-4"
+                onclick="window.location.href='/register'">
+            Sign Up
+        </button>
+
+    {% endif %}
+
+    
+
+</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="container-fluid indoor-section">
+        <div class="hero-content">
+            <h1>Indoor Plants</h1>
+            <div class="decorative-line">
+                <span></span>
+                <i class="fa-solid fa-leaf"></i>
+                <span></span>
+            </div>
+
+            <p>
+                Bring life to your home with our<br>
+                beautiful collection of indoor plants.
+            </p>
+            <div class="hero-buttons">
+
+                <a href="#catalog-section-indoor" class="explore-btn">
+                    <i class="fa-solid fa-seedling"></i>
+                    Explore Plants
+                </a>
+
+                <a href="/indoorgui" class="guide-btn">
+                    <i class="fa-solid fa-seedling"></i>
+                    Plant Guide
+                </a>
+
+            </div>
+        </div>
+
+
+        <!-- Hero Image -->
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/indoor.png') }}" alt="Indoor Plants">
+        </div>
+    </section>
+    <div class="section-title">
+
+        <span></span>
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <h2>Popular Picks</h2>
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <span></span>
+
+    </div>
+    <section class="catalog-section-indoor" id="catalog-section-indoor">
+        {% if plants %}
+
+            {% for plant in plants %}
+            <div class="card plant-card-indoor shadow card-indoor" style="width: 12rem;">
+                 {% if plant.image %}
+                <img src="{{ url_for('static', filename='images/'+plant.image) }}" class="card-img-top" alt="...">
+                  {% endif %}
+
+                <div class="card-body text-left">
+                    <h5 class="card-title"> {{ plant.item_name }}</h5>
+                    <p class="card-text text-success fw-bold">₹{{ plant.price }}</p>
+                     {% if plant.stock > 0 %}
+                     <form action="{{ url_for('add_to_cart') }}" method="POST">
+                             <input type="hidden" name="item_id" value="{{ plant.item_id }}">
+                             <button type="submit" class="btn btn-success"> Add to Cart</button>
+                     </form>
+                   
+                    {% else %}
+                     <button class="btn btn-secondary"
+                                disabled>
+
+                            Out of Stock
+
+                        </button>
+
+                    {% endif %}
+                </div>
+            </div>
+             {% endfor %}
+
+    {% else %}
+     <div class="text-center w-100">
+
+            <h4>
+                🌱 No plants available
+            </h4>
+
+        </div>
+
+    {% endif %}
+       
+    </section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
