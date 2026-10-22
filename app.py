@@ -24,6 +24,10 @@ def get_db_connection():
 def home():
     return render_template('index.html')
 
+
+@app.route('/')
+def index():
+    return redirect(url_for('home'))
 #====about=====
 @app.route('/about')
 def about():
